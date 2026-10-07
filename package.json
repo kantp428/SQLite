@@ -1,0 +1,21 @@
+{
+  "name": "sqlite-learning-todo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "db:import": "node scripts/import.js",
+    "demo": "node scripts/demo.js",
+    "test": "node --test",
+    "format": "prettier --write package.json src scripts test public README.md SQLite.md Presentation.md",
+    "format:check": "prettier --check package.json src scripts test public README.md SQLite.md Presentation.md",
+    "demo:relations": "node scripts/relations.js"
+  },
+  "devDependencies": {
+    "prettier": "3.9.9"
+  }
+}

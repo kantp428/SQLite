@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SQLite Project Lab</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <small>NODE.JS + SQLITE</small>
+      <h1>Project Lab</h1>
+      <p>จัดการทีม โปรเจกต์ งาน และความคิดเห็นด้วยฐานข้อมูลสัมพันธ์</p>
+    </header>
+    <main>
+      <p id="message" role="status"></p>
+      <section id="stats"></section>
+      <nav>
+        <button data-tab="tasks">งาน</button
+        ><button data-tab="projects">โปรเจกต์</button
+        ><button data-tab="users">ผู้ใช้</button
+        ><button data-tab="tags">แท็ก</button>
+      </nav>
+      <section>
+        <h2 id="heading"></h2>
+        <form id="editor"></form>
+        <div id="records"></div>
+      </section>
+      <section id="detail" hidden>
+        <h2 id="detail-title"></h2>
+        <h3>แท็กของงาน</h3>
+        <div id="tag-editor"></div>
+        <h3>ความคิดเห็น</h3>
+        <div id="comments"></div>
+        <form id="comment-form"></form>
+      </section>
+      <footer>Browser → REST API → Node.js → data/todo.db • 6 tables</footer>
+    </main>
+    <dialog id="edit-dialog" aria-labelledby="edit-title">
+      <h2 id="edit-title"></h2>
+      <p id="edit-error" role="alert"></p>
+      <form id="edit-form"></form>
+      <div class="dialog-actions">
+        <button type="button" id="edit-cancel">ยกเลิก</button>
+        <button type="submit" form="edit-form" id="edit-save">บันทึก</button>
+      </div>
+    </dialog>
+  </body>
+</html>

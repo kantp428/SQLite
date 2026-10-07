@@ -1,0 +1,168 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #173347;
+  background: #edf3f7;
+}
+body {
+  margin: 0;
+}
+header {
+  background: #15384a;
+  color: white;
+  padding: 32px max(24px, calc((100vw - 1100px) / 2));
+}
+header small {
+  color: #8be0ce;
+  letter-spacing: 2px;
+}
+main {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+#stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+#stats strong {
+  display: block;
+  font-size: 26px;
+}
+nav,
+form,
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+form {
+  align-items: end;
+  margin: 18px 0;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  padding: 9px;
+  border: 1px solid #bdcbd5;
+  border-radius: 6px;
+}
+button {
+  cursor: pointer;
+  background: white;
+  color: #173347;
+}
+button.active,
+button[type="submit"] {
+  background: #126b5c;
+  color: white;
+}
+button:disabled {
+  opacity: 0.5;
+}
+.row {
+  border-top: 1px solid #e4ecf1;
+  padding: 16px 0;
+}
+.info {
+  flex: 1;
+  min-width: 160px;
+  overflow-wrap: anywhere;
+}
+.meta,
+footer {
+  font-size: 13px;
+  color: #63788a;
+}
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  background: #e0f4eb;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin: 4px;
+}
+.done {
+  text-decoration: line-through;
+}
+.tag-choice {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 8px;
+}
+#message {
+  color: #b42318;
+  min-height: 24px;
+}
+footer {
+  margin: 28px 0;
+}
+@media (max-width: 700px) {
+  #stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  form label {
+    width: 100%;
+  }
+  input,
+  select,
+  textarea {
+    max-width: 100%;
+  }
+  section {
+    padding: 16px;
+  }
+}
+
+dialog {
+  border: 0;
+  border-radius: 16px;
+  padding: 28px;
+  width: min(480px, calc(100vw - 64px));
+  color: #173347;
+  box-shadow: 0 24px 80px #102d4855;
+}
+dialog::backdrop {
+  background: #102d4880;
+}
+dialog h2 {
+  margin-top: 0;
+}
+#edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#edit-form input,
+#edit-form select,
+#edit-form textarea {
+  width: 100%;
+}
+#edit-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+#edit-error {
+  color: #b42318;
+}
