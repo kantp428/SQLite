@@ -35,7 +35,8 @@ npm start
 - Presentation.md: เนื้อหา 10 สไลด์ พร้อมบทพูดและสาธิตระบบจริง
 - src/server.js: HTTP API และ validation
 - src/db.js: เปิดฐานข้อมูลและอัปเกรดไฟล์รุ่นแรก
-- public/: HTML, CSS และ JavaScript ของหน้าเว็บ
+- frontend/app.jsx: React UI และไอคอน Lucide React
+- public/: HTML, CSS และ bundle ที่ build แล้ว
 
 ```powershell
 npm run demo
@@ -45,3 +46,9 @@ npm run format:check
 ```
 
 demo ใช้ฐานข้อมูลในหน่วยความจำ ส่วน demo:relations อ่านฐานข้อมูลไฟล์จริง ตัวอย่างนี้ไม่มี login; ผู้ใช้เป็นข้อมูลเจ้าของ/ผู้เขียนสำหรับเรียนรู้
+
+## UI และการ build
+
+Dashboard แยก 6 การ์ด ใช้แท็บพร้อมจำนวนรายการ ค้นหาชื่อได้ เพิ่ม/แก้ไขและยืนยันลบผ่าน dialog พร้อมไอคอน Lucide React หน้าเว็บขยายตามขนาดจอ
+
+npm start จะ build หน้าเว็บอัตโนมัติ หลังแก้ React ใช้ npm run build แล้วรีเฟรช ตรวจ UI ด้วย npm run test:ui (ต้องมี Microsoft Edge) ใช้ฐานข้อมูลในหน่วยความจำและบันทึกภาพใน artifacts/

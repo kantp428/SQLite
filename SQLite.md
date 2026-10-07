@@ -75,7 +75,7 @@ npm run db:import
 npm start
 ```
 
-เปิด `http://localhost:3000` โครงการไม่มี runtime dependency เพิ่มเติม; Prettier เป็น development dependency สำหรับจัดรูปแบบโค้ด
+เปิด `http://localhost:3000` หน้าเว็บใช้ React และ Lucide React; esbuild ใช้สร้าง bundle และ Prettier ใช้จัดรูปแบบโค้ด ส่วน server ใช้ node:sqlite เดิม
 
 ถ้า port 3000 ถูกใช้ เปลี่ยนใน PowerShell:
 
@@ -217,8 +217,15 @@ PUT /api/tasks/:id/tags รับ {"tag_ids":[1,2]} เพื่อแทนท�
 
 ### ไฟล์หน้าเว็บ
 
-- public/index.html: โครงหน้าจอ
-- public/app.js: fetch, ฟอร์ม, dropdown, รายละเอียดงาน และความคิดเห็น
+- public/index.html: หน้าหลักที่ mount React
+- frontend/app.jsx: React UI, fetch, Dashboard, แท็บ, รายละเอียดงาน และ dialog
 - public/style.css: รูปแบบหน้าเว็บและหน้าจอขนาดเล็ก
+- public/app.js: bundle ที่สร้างด้วย npm run build (แก้ต้นฉบับใน frontend/app.jsx)
 - src/server.js: API, validation และ SQL สำหรับ resource ทั้งหมด
 - test/project.test.js: workflow ข้ามตาราง CASCADE/SET NULL และการเปิดฐานข้อมูลซ้ำ
+
+## 12. Dashboard และหน้าจอ React
+
+Dashboard แสดงจำนวนทั้ง 6 ตารางแยกการ์ด พร้อมจำนวนงานเสร็จแล้วและคงเหลือ แท็บงาน/โปรเจกต์/ผู้ใช้/แท็กมีไอคอน Lucide React และจำนวนรายการ ค้นหาชื่อได้ในแต่ละแท็บ กดเพิ่มหรือแก้ไขจะเปิด dialog ส่วนลบเปิด dialog พร้อมชื่อรายการและผลกระทบ ยกเลิกหรือ Esc ปิดได้ ขณะบันทึกระบบป้องกันการส่งซ้ำ ข้อผิดพลาดจะแสดงใน dialog
+
+npm start จะ build React ให้อัตโนมัติก่อนเปิด server หลังแก้ frontend/app.jsx ให้รัน npm run build แล้วรีเฟรช ใช้ npm run test:ui เพื่อตรวจหน้าเว็บด้วย Microsoft Edge แบบ headless บนฐานข้อมูลในหน่วยความจำ แยกจากข้อมูลจริง ภาพตรวจหน้าจออยู่ใน artifacts/

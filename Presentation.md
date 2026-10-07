@@ -84,7 +84,7 @@
 ## สไลด์ 7: เครื่องมือและเส้นทางข้อมูล
 
 ```text
-HTML / CSS / JavaScript
+React / CSS / Lucide React
        ↓ fetch + JSON
 Node.js 24 HTTP server
        ↓ node:sqlite / prepared statements
@@ -144,7 +144,7 @@ SQLite: data/todo.db
 
 GET อ่านรายการ, POST เพิ่ม, PATCH แก้ไข และ DELETE ลบ สำหรับ 5 resource หลัก ส่วน GET /api/task-tags แสดงรายการในตารางเชื่อม
 
-บทพูด: “เราไม่ให้ผู้ใช้กรอกรหัส foreign key เอง แต่ให้เลือกข้อมูลที่มีจาก dropdown และเลือกแท็กด้วย checkbox”
+บทพูด: “Dashboard แสดงจำนวนแยกครบ 6 ตาราง แท็บมีไอคอนและจำนวนรายการ เพิ่มหรือแก้ไขผ่าน dialog ส่วนลบมี dialog ยืนยันพร้อมผลกระทบ ใช้ dropdown เลือก foreign key และ checkbox เลือกแท็ก”
 
 ## สไลด์ 11: JOIN และ Transaction
 
